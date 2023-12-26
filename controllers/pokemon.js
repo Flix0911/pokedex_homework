@@ -11,9 +11,11 @@ const pokemon = require("../models/pokemon.js")
 
 //ROUTES
 
-//INDUCES
-
 //INDEX - GET
+router.get("/", (req, res) => {
+    //confirming data is connected. ANSWER: YES, returns JSON data
+    //res.send(pokemon)
+})
 
 //NEW - GET
 
