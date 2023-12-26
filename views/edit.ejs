@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+<% console.log(pokemons) %>
+
+    <h1>Update <%= pokemons.name %></h1>
+
+    <form action="/pokemon/<%= pokemons.id %>/?_method=PUT" method="post">
+        ID: <input type="text" name="id" value="<%= pokemons.id %>">
+        Type: <input type="text" name="type" value="<%= pokemons.type.join(', ') %>">
+        HP: <input type="text" name="hp" value="<%= pokemons.stats.hp %>">
+        Attack: <input type="text" name="attack" value="<%= pokemons.stats.attack %>">
+        Defense: <input type="text" name="defense" value="<%= pokemons.stats.defense %>">
+        Special Attack: <input type="text" name="special attack" value="<%= pokemons.stats.spattack %>">
+        Special Defense: <input type="text" name="special defense" value="<%= pokemons.stats.spdefense %>">
+        Speed: <input type="text" name="speed" value="<%= pokemons.stats.speed %>">
+        Classification: <input type="text" name="classification" value="<%= pokemons.misc.classification %>">
+        Height: <input type="text" name="height" value="<%= pokemons.misc.height %>">
+        Weight: <input type="text" name="weight" value="<%= pokemons.misc.weight %>">
+        Happiness: <input type="text" name="happiness" value="<%= pokemons.misc.happiness %>">
+        Image: <input type="file" id="imageInput" name="image" accept="image/*">
+        <input type="submit" value="Update <%= pokemons.name %>">
+    </form>
+
+
+</body>
+</html>

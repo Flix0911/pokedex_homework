@@ -4,7 +4,7 @@
 <body>
     <%- include("./partials/nav.ejs") %>
     <h1> About <%= pokemons.name %>!</h1>
-    <li><%= pokemons.id %></li>
+    <li>#<%= pokemons.id %></li>
     <h3><img src="<%= pokemons.img %>"></h3>
 
     <p>Type: <%= pokemons.type.join(', ') %></p>
@@ -20,8 +20,8 @@
 </ul>
 <h3>Fun facts!</h3>
     <li>Classification: <%= pokemons.misc.classification %></li>
-    <li>Height: <%= pokemons.misc.heigh %></li>
-    <li>Weight: <%= pokemons.misc.weight %></li>
+    <li>Height: <%= pokemons.misc.height %></li>
+    <li>Weight: <%= pokemons.misc.weight %>lbs</li>
     <li>Happiness: <%= pokemons.misc.happiness %></li>
 </body>
 </html>
