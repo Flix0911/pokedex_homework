@@ -29,7 +29,13 @@ router.get("/", (req, res) => {
 //EDIT - GET
 
 //SHOW - GET
-
+router.get("/:id", (req, res) => {
+    //get id from params
+    const id = req.params.id
+    //get pokemon from array
+    const pokemonId = pokemon[id]
+    res.send(pokemonId)
+})
 
 
 //export the router
