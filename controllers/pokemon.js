@@ -33,8 +33,9 @@ router.get("/:id", (req, res) => {
     //get id from params
     const id = req.params.id
     //get pokemon from array
-    const pokemonId = pokemon[id]
-    res.send(pokemonId)
+    const pokemons = pokemon[id]
+    // res.send(pokemonId)
+    res.render("show.ejs", {pokemons, id})
 })
 
 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <h1> About <%= pokemons.name %>!</h1>
+    <h3><img src="<%= pokemons.img %>"></h3>
+
+    <p>Type: <%= pokemons.type.join(', ') %></p>
+
+<h3>Stats</h3>
+<ul>
+    <li>HP: <%= pokemons.stats.hp %></li>
+    <li>Attack: <%= pokemons.stats.attack %></li>
+    <li>Defense: <%= pokemons.stats.defense %></li>
+    <li>Special Attack: <%= pokemons.stats.spattack %></li>
+    <li>Special Defense: <%= pokemons.stats.spdefense %></li>
+    <li>Speed: <%= pokemons.stats.speed %></li>
+</ul>
+<h3>Fun facts!</h3>
+    <li>Classification: <%= pokemons.misc.classification %></li>
+    <li>Height: <%= pokemons.misc.heigh %></li>
+    <li>Weight: <%= pokemons.misc.weight %></li>
+    <li>Happiness: <%= pokemons.misc.happiness %></li>
+</body>
+</html>
