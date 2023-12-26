@@ -24,6 +24,14 @@ router.get("/new", (req, res) => {
 })
 
 //DESTORY - DELETE
+router.delete("/:id", (req, res) => {
+    //get the id from params
+    const id = req.params.id
+    //splice it from the array
+    pokemon.splice(id, 1)
+    //redirect back to index
+    res.redirect("/pokemon")
+})
 
 //UPDATE - PUT
 router.put("/:id", (req, res) => {
@@ -37,6 +45,13 @@ router.put("/:id", (req, res) => {
 })
 
 //CREATE - POST
+router.post("/", (req, res) => {
+    //grab the form data
+    const body = req.body
+    //add the pokemon to the array
+    pokemon.push(body)
+    res.redirect("/pokemon")
+})
 
 //EDIT - GET - /pokemon/:id/edit
 router.get("/:id/edit", (req, res) => {
@@ -53,6 +68,7 @@ router.get("/:id", (req, res) => {
     const id = req.params.id
     //get pokemon from array
     const pokemons = pokemon[id]
+
     // res.send(pokemons)
     res.render("show.ejs", {pokemons, id})
 })
