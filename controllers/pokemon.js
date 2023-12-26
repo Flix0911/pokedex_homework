@@ -15,6 +15,7 @@ const pokemon = require("../models/pokemon.js")
 router.get("/", (req, res) => {
     //confirming data is connected. ANSWER: YES, returns JSON data
     //res.send(pokemon)
+    res.render("index.ejs", {pokemon})
 })
 
 //NEW - GET

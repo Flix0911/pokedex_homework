@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <h1>Gotta Catch'em All - The Original 151!</h1>
+
+        <ul>
+            <% for(let i = 0; i < pokemon.length; i++) { %>
+
+                <li>
+                    <h2><%= pokemon[i].name %></h2>
+                        <h3><%= pokemon[i].id %></h3>
+                            <h4><img src="<%= pokemon[i].img %>"></h4>
+                </li>
+
+                <% } %>
+
+        </ul>
+    
+</body>
+</html>
