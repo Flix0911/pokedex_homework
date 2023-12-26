@@ -7,16 +7,19 @@ const morgan = require("morgan")
 //import method-override
 const methodOverride = require("method-override")
 
-//pokemon router - empty, will return
+//pokemon router
+const pokemonRouter = require("./controllers/pokemon.js")
 
-//import pokemen - empty, will return 
+//import pokemen
+const pokemon = require("./models/pokemon.js")
 
 //create app object
 const app = express()
 
 //middleware
 
-//styles - empty, will return
+//styles 
+app.use(express.static("public"))
 
 //urlencoded
 app.use(express.urlencoded({extended: true}))
@@ -27,7 +30,8 @@ app.use(morgan("dev"))
 //methodOverride
 app.use(methodOverride("_method"))
 
-//pokemon router - empty, will return
+//pokemon router
+app.use("/pokemon", pokemonRouter)
 
 //server listener
 app.listen(3000, () => {
