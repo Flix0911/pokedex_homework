@@ -2,6 +2,8 @@
 <html lang="en">
     <%- include("./partials/head.ejs") %>
 <body>
+    <% console.log(pokemons) %>
+
     <%- include("./partials/nav.ejs") %>
     <h1>About <%= pokemons.name %>!</h1>
     <li>#<%= pokemons.id %></li>
@@ -11,18 +13,14 @@
 
 <h3>Stats</h3>
 <ul>
-    <li>HP: <%= pokemons.stats.hp %></li>
-    <li>Attack: <%= pokemons.stats.attack %></li>
-    <li>Defense: <%= pokemons.stats.defense %></li>
-    <li>Special Attack: <%= pokemons.stats.spattack %></li>
-    <li>Special Defense: <%= pokemons.stats.spdefense %></li>
-    <li>Speed: <%= pokemons.stats.speed %></li>
+    <li>HP: <%= pokemons.stats.hp || `10` %></li>
+    <li>Attack: <%= pokemons.stats.attack || 'N/A' %></li>
+    <li>Defense: <%= pokemons.stats.defense || 'N/A' %></li>
+    <li>Speed: <%= pokemons.stats.speed || 'N/A' %></li>
 </ul>
 <h3>Fun facts!</h3>
-    <li>Classification: <%= pokemons.misc.classification %></li>
-    <li>Height: <%= pokemons.misc.height %></li>
-    <li>Weight: <%= pokemons.misc.weight %>lbs</li>
-    <li>Happiness: <%= pokemons.misc.happiness %></li>
+    <li>Height: <%= pokemons.misc.height || 'N/A' %></li>
+    <li>Weight: <%= pokemons.misc.weight || 'N/A' %>lbs</li>
 
     <a href="/pokemon/<%= id %>/edit"><button>Edit <%= pokemons.name %>'s stats</button>
 </body>

@@ -6,8 +6,15 @@
 
     <h1>Create a new Pokemon!</h1>
         <form action="/pokemon" method="post">
+            <label>ID: <input type="text" name="id"></label>
             <label>Name: <input type="text" name="name"></label>
-            <label>Type: <input type="text" name="type"></label>
+            <label>Type: <input type="text" name="type[]"></label>
+            <label>Hit Points: <input type="text" name="stats[hp]"></label>
+            <label>Attack: <input type="text" name="stats[attack]"></label>
+            <label>Defense: <input type="text" name="stats[defense]"></label>
+            <label>Speed: <input type="text" name="stats[speed]"></label>
+            <label>Height: <input type="text" name="misc[height]"></label>
+            <label>Weight: <input type="text" name="misc[weight]"></label>
             <label for="imageText">Enter Image Text:</label>
             <input type="text" id="imageText" name="img" placeholder="Type your text here" required>
             <input type="submit" value="Create Pokemon">

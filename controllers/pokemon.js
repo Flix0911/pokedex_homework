@@ -37,10 +37,14 @@ router.delete("/:id", (req, res) => {
 router.put("/:id", (req, res) => {
     //get id from params
     const id = req.params.id
+    console.log("Request Body:", req.body);
+    console.log("Updating Pokemon at index:", id);
     //get the body
     const body = req.body
+    console.log("Update Pokemon Data:", body)
     //swap out the old version for the new version
-    pokemon[id] = body
+    pokemon[id].stats = body.stats
+    console.log("Pokemon array after update:", pokemon)
     res.redirect("/pokemon")
 })
 
@@ -48,6 +52,7 @@ router.put("/:id", (req, res) => {
 router.post("/", (req, res) => {
     //grab the form data
     const body = req.body
+    //create a new pokemon
     //add the pokemon to the array
     pokemon.push(body)
     res.redirect("/pokemon")
