@@ -36,18 +36,18 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.015);
     transition: transform 0.2s ease-in-out;
     position: relative;
     width: calc(12.5% - 20px);
     box-sizing: border-box;
-    height: 270px;
+    height: 300px;
     object-fit: cover;
 }
 
-.pokemon-image /* COMPLETE */  {
-    width: 220px;
-    height: 220px;
+.pokemon-image img  {
+    max-width: 100%;
+    max-height: 100%;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -61,6 +61,9 @@ body {
     color: inherit;
     display: block;
     overflow: hidden;
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .pokemon img {
