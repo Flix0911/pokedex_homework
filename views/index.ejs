@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("./partials/head.ejs") %>
+<%- include("./partials/head.ejs") %>
 <body>
     <%- include("./partials/nav.ejs") %>
-    <h1>Gotta Catch'em All - The Original 151!</h1>
+    <h1 class="index">Gotta Catch'em All - The Original 151!</h1>
 
-        <ul>
+    <div class="pokemon-container">
+        <ul class="pokemon-list">
             <% for(let i = 0; i < pokemon.length; i++) { %>
-                
-                <a href="/pokemon/<%= i %>"><li><%= pokemon[i].name %></li></a>
-                <a><img src="<%= pokemon[i].img %>"></a>
-
-                <form action="/pokemon/<%= i %>?_method=DELETE" method="post">
-                    <input type="submit" value="delete">
-                </form>
-             
-              
-                <% } %>
-
+                <li class="pokemon">
+                    <a href="/pokemon/<%= i %>">
+                        <img src="<%= pokemon[i].img %>" alt="<%= pokemon[i].name %>">
+                        <span class="pokemon-name"><%= pokemon[i].name %></span>
+                    </a>
+                    <div class="cta">
+                        <form action="/pokemon/<%= i %>?_method=DELETE" method="post">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </div>
+                </li>
+            <% } %>
         </ul>
-    
-</body>
-</html>
+    </div>

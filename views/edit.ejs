@@ -3,10 +3,12 @@
     <%- include("./partials/head.ejs") %>
 <body>
 <% console.log(pokemons) %>
+<%- include("./partials/nav.ejs") %>
 
-    <h1>Update <%= pokemons.name %></h1>
 
-    <form action="/pokemon/<%= id %>?_method=PUT" method="post">
+    <h1 class="edit">Update <%= pokemons.name %></h1>
+
+    <form action="/pokemon/<%= id %>?_method=PUT" method="post" class="cta">
         HP: <input type="text" name="stats[hp]" value="<%= pokemons.stats.hp %>">
         Attack: <input type="text" name="stats[attack]" value="<%= pokemons.stats.attack %>">
         Defense: <input type="text" name="stats[defense]" value="<%= pokemons.stats.defense %>">

@@ -19,7 +19,7 @@ const app = express()
 //middleware
 
 //styles 
-app.use(express.static("public"))
+app.use("/public", express.static("public"))
 
 //urlencoded
 app.use(express.urlencoded({extended: true}))

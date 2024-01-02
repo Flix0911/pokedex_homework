@@ -5,23 +5,28 @@
     <% console.log(pokemons) %>
 
     <%- include("./partials/nav.ejs") %>
-    <h1>About <%= pokemons.name %>!</h1>
-    <li>#<%= pokemons.id %></li>
-    <h3><img src="<%= pokemons.img %>"></h3>
+    <h1 class="show">About <%= pokemons.name %>!</h1>
+    <div class="about-pokemon">
+        <li class="show-pokemon-image">#<%= pokemons.id %></li>
+        <h3><img src="<%= pokemons.img %>"></h3>
+    <div class="show-pokemon-information">
+            <p>Type: <%= pokemons.type.join(', ') %></p>
 
-    <p>Type: <%= pokemons.type.join(', ') %></p>
+        <h3>Stats</h3>
+        <ul>
+            <li>HP: <%= pokemons.stats.hp || `10` %></li>
+            <li>Attack: <%= pokemons.stats.attack || 'N/A' %></li>
+            <li>Defense: <%= pokemons.stats.defense || 'N/A' %></li>
+            <li>Speed: <%= pokemons.stats.speed || 'N/A' %></li>
+        </ul>
+        <h3>Fun facts!</h3>
+            <li>Height: <%= pokemons.misc.height || 'N/A' %></li>
+            <li>Weight: <%= pokemons.misc.weight || 'N/A' %>lbs</li>
+    </div>
+</div>
 
-<h3>Stats</h3>
-<ul>
-    <li>HP: <%= pokemons.stats.hp || `10` %></li>
-    <li>Attack: <%= pokemons.stats.attack || 'N/A' %></li>
-    <li>Defense: <%= pokemons.stats.defense || 'N/A' %></li>
-    <li>Speed: <%= pokemons.stats.speed || 'N/A' %></li>
-</ul>
-<h3>Fun facts!</h3>
-    <li>Height: <%= pokemons.misc.height || 'N/A' %></li>
-    <li>Weight: <%= pokemons.misc.weight || 'N/A' %>lbs</li>
-
+    <div class="cta-edit">
     <a href="/pokemon/<%= id %>/edit"><button>Edit <%= pokemons.name %>'s stats</button>
+    </div>
 </body>
 </html>

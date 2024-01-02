@@ -4,8 +4,8 @@
 <body>
     <%- include("./partials/nav.ejs") %>
 
-    <h1>Create a new Pokemon!</h1>
-        <form action="/pokemon" method="post">
+    <h1 class="new">Create a new Pokemon!</h1>
+        <form action="/pokemon" method="post" class="cta">
             <label>ID: <input type="text" name="id"></label>
             <label>Name: <input type="text" name="name"></label>
             <label>Type: <input type="text" name="type[]"></label>
